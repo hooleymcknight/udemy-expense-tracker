@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import Card from './components/UI/Card'
 import Expenses from './components/Expenses/Expenses'
@@ -5,6 +6,8 @@ import ExpensesFilter from './components/ExpensesFilter/ExpensesFilter'
 import NewExpense from './components/NewExpense/NewExpense'
 
 const App = () => {
+  const [appliedFilter, setAppliedFilter] = useState('')
+
   let expenses = [
     {
       id: 0,
@@ -37,7 +40,7 @@ const App = () => {
   }
 
   const filterYearChangeHandler = (filteredYear) => {
-    console.log(filteredYear)
+    setAppliedFilter(filteredYear)
   }
 
   return (
@@ -47,6 +50,7 @@ const App = () => {
       <Card className="expenses">
         <Expenses
           data={expenses}
+          data-filtered-year={appliedFilter}
         ></Expenses>
       </Card>
     </div>

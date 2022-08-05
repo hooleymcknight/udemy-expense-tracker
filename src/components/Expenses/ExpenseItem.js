@@ -10,8 +10,13 @@ const ExpenseItem = (props) => {
         setTitle('new')
     }
 
+    let classes = 'expense-item'
+    if (props['data-filtered-year'] === false) {
+        classes += ' hidden'
+    }
+
     return (
-        <Card className="expense-item" data-filter-year={props.date}>
+        <Card className={classes}>
             <ExpenseDate date={props.date} />
             <div className="expense-item__description">
                 <h2>{title}</h2>
