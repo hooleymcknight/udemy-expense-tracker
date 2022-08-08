@@ -11,7 +11,6 @@ const Expenses = (props) => {
         
         expense_items.push(
             <ExpenseItem 
-                key={set.id}
                 date={set.date}
                 title={set.title}
                 amount={set.amount}
