@@ -7,6 +7,10 @@
   background-color: #4b4b4b;
 }
 
+.expense-item.false {
+  display: none;
+}
+
 .expense-item__description {
   display: flex;
   flex-direction: column;

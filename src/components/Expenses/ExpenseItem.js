@@ -3,8 +3,10 @@ import Card from '../UI/Card'
 import './ExpenseItem.css'
 
 const ExpenseItem = (props) => {
+  const classes = `expense-item ${props.shown}`
+
   return (
-    <Card className='expense-item'>
+    <Card className={classes}>
       <ExpenseDate date={props.date} />
       <div className='expense-item__description'>
         <h2>{props.title}</h2>
