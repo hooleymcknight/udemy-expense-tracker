@@ -39,16 +39,8 @@ const ExpenseForm = (props) => {
     setEnteredDate('')
   }
 
-  const resetHandler = () => {
-    props.onCloseForm()
-
-    setEnteredTitle('')
-    setEnteredAmount('')
-    setEnteredDate('')
-  }
-
   return (
-    <form onSubmit={submitHandler} onReset={resetHandler}>
+    <form onSubmit={submitHandler} onReset={props.onCancel}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>

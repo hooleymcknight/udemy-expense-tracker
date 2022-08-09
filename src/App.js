@@ -32,7 +32,6 @@ const starter_expenses = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(starter_expenses)
-  const [formState, setFormState] = useState(false)
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
@@ -40,13 +39,9 @@ const App = () => {
     })
   }
 
-  const changeFormState = (newFormState) => {
-    setFormState(newFormState)
-  }
-
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler} onChangeFormState={changeFormState} formState={formState} />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   )
