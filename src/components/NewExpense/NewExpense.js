@@ -8,11 +8,28 @@ const NewExpense = (props) => {
       id: Math.random().toString()
     }
     props.onAddExpense(expenseData)
+    props.onChangeFormState(false)
+  }
+
+  const collapseForm = () => {
+    props.onChangeFormState(false)
+  }
+
+  const openForm = () => {
+    props.onChangeFormState(true)
+  }
+
+  if (!props.formState) {
+    return (
+      <div className='new-expense'>
+        <button onClick={openForm} type="button">Add New Expense</button>
+      </div>
+    )
   }
 
   return (
     <div className='new-expense'>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCloseForm={collapseForm} />
     </div>
   )
 }
